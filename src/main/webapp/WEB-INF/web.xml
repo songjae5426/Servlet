@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Servlet</display-name>
+  
+  <!-- <servlet>태그 : 특정 서블릿을 정의(등록)하는 역할 -->
+  <!-- <servlet-name>태그 : 서블릿의 이름 설정 -->
+  <!-- <servlet-class>태그 : 서블릿의 클래스 경로를 설정(패키지명.클래스명) -->
+  <servlet>
+  	<servlet-name>hello</servlet-name>
+  	<servlet-class>com.songjae.hello.HelloController</servlet-class>
+  </servlet>
+  
+  <!-- <servlet-mapping>태그 : 특정 서블릿을 어떤 URL패텅과 연결할지 설정하는 역할 -->
+  <!-- <servlet-name>태그 : url을 매핑할 서블릿명(등록한 서블릿명) -->
+  <!-- <url-pattern>태그 : 해당 서블릿을 호출할 URL경로 지정(경로의 맨 앞은 항상 /이다) -->
+  <servlet-mapping>
+  	<servlet-name>hello</servlet-name>
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  <!-- ex 등록 -->
+  <servlet>
+  	<servlet-name>ex01</servlet-name>
+  	<servlet-class>com.songjae.servlet.ex.Ex01Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ex01</servlet-name>
+  	<url-pattern>/servlet/ex01</url-pattern>
+  </servlet-mapping>
+  
+  <!-- test 등록 -->
+  <servlet>
+  	<servlet-name>test01</servlet-name>
+  	<servlet-class>com.songjae.servlet.test.Test01Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>test01</servlet-name>
+  	<url-pattern>/servlet/test01</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>test02</servlet-name>
+  	<servlet-class>com.songjae.servlet.test.test02Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>test02</servlet-name>
+  	<url-pattern>/servlet/test02</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정보 입력</title>
+</head>
+<body>
+	<!--  /servlet/ex04?name=김인규%birthday=20031204 -->
+	<!-- method는 get방식인지 뭔지 결정 -->
+	<!-- action : url Path => servlet의 위치 -->
+	<!-- name은 파라미터 이름 지정 -->
+	<!-- button type은 submit으로 하기 -->
+	<h3>정보 입력</h3>
+	<form method="get" action="/servlet/ex04">
+		<label>이름 : </label> <input type="text" name="name">
+		<br>
+		<label>생년월일 : </label> <input type="text" placeholder="2007020" name="birthday">
+		<br>
+		<button type="submit">입력</button>
+	</form>
+</body>
+</html>
