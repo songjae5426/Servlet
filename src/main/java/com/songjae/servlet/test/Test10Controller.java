@@ -25,15 +25,6 @@ public class Test10Controller extends HttpServlet{
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		
-		// 조건 비교
-		String result = userMap.get("name") + "님 환영 합니다.";
-		if(!(userMap.get("id").equals(id))) {
-			result = "id가 일치하지 않습니다.";
-		}
-		if(!(userMap.get("password").equals(password))) {
-			result = "password가 일치하지 않습니다.";
-		}
-		
 		
 		out.println(""
 				+ "<html>\n"
@@ -42,12 +33,25 @@ public class Test10Controller extends HttpServlet{
 				+ "	<body>\n");
 		
 		out.println(""
-				+ "<h2>" + result + "</h2>\n");
+				+ "<h2>" + loginResult(id, password) + "</h2>\n");
 		
 		out.println(""
 				+ "	</body>\n"
 				+ "</html>");
 		
+	}
+	
+	public String loginResult(String id, String password) {
+		// 조건문은 큰것 부터 쪼개 나가야 한다
+		if(!(userMap.get("password").equals(password) && userMap.get("id").equals(id))) {
+			return "id와 password 모두 일치 하지 않습니다.";
+		}else if(!(userMap.get("id").equals(id))) {
+			return "id가 일치하지 않습니다.";
+		}else if(!(userMap.get("password").equals(password))) {
+			return "password가 일치하지 않습니다.";
+		}else {
+			return userMap.get("name") + "님 환영 합니다.";
+		}
 	}
 	
 	private final Map<String, String> userMap =  new HashMap<String, String>() {
