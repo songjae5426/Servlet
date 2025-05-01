@@ -2,6 +2,8 @@ package com.songjae.hello;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
+import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 // HTTP 요청을 처리 하기 위해서는 HttpServlet클래스를 상속 받아야 한다
 // Response : 응답, Request : 요청
 public class HelloController extends HttpServlet{
-	
 	// doGet()메소드는 클라이언트가 GET요청을 보냈을 때 호출된다
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
