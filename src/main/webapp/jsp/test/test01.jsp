@@ -15,10 +15,10 @@
 	<%
 		int[] scores = {80, 90, 100, 95, 80};
 		int sum = 0;
-		for(int i = 0; i < 5; i++){
+		for(int i = 0; i < scores.length; i++){
 			sum += scores[i];
 		}
-		double avg = (double)(sum / scores.length);
+		double avg = (double)sum / scores.length;
 	%>
 	<h2>점수 평균은 <%= avg %> 입니다.</h2>
 	
