@@ -12,10 +12,10 @@
 		<h3>길이 변환</h3>
 		<form method="post" action="/jsp/test/test05.jsp">
 			<div class="input-group d-felx align-items-end">
-				<input type="text" name="cm" class="form-control col-3">
+				<input type="number" name="cm" class="form-control col-3">
 				<label for="cm">cm</label>
 			</div>
-			<input type="checkbox" name="units" value="inch">
+			<input type="checkbox" name="units" value="inch" checked="checked">
 			<label for="unit">인치</label>
 			<input type="checkbox" name="units" value="yard">
 			<label for="unit">야드</label>

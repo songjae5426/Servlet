@@ -12,7 +12,7 @@
 <body>
 	<%!
 		// 계산 메소드
-		public double arithmometer(int number1, int number2, String operator){
+		public double arithmometer(double number1, double number2, String operator){
 			switch(operator){
 				case "+" : 
 					return number1 + number2;
@@ -25,14 +25,13 @@
 				default :
 					return 0;
 			}
-		
 		}
 	%>
 	
 	<%
-		int number1 = Integer.parseInt(request.getParameter("number1"));
+		double number1 = Double.parseDouble(request.getParameter("number1"));
 		String operator = request.getParameter("operator");
-		int number2 = Integer.parseInt(request.getParameter("number2"));
+		double number2 = Double.parseDouble(request.getParameter("number2"));
 	%>
 	
 	<div class="container">
