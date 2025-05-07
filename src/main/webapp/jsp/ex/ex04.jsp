@@ -68,18 +68,16 @@
 		</thead>
 		<tbody>
 			<%
-				for()
+				for(int i = 0; i < scoreList.size(); i++){
 			%>
 			<tr>
-				<td>90</td>
-				<td>80</td>
-				<td>100</td>
+				<td><%= scoreList.get(i).get("국어") %></td>
+				<td><%= scoreList.get(i).get("수학") %></td>
+				<td><%= scoreList.get(i).get("영어") %></td>
 			</tr>
-			<tr>
-				<td>90</td>
-				<td>80</td>
-				<td>100</td>
-			</tr>
+			<%
+				}
+			%>
 		</tbody>
 	</table>
 
