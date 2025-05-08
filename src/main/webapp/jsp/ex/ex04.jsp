@@ -68,6 +68,9 @@
 		</thead>
 		<tbody>
 			<%
+				//for(Map<String, Integer> score : scoreList){
+			%>
+			<%
 				for(int i = 0; i < scoreList.size(); i++){
 			%>
 			<tr>
