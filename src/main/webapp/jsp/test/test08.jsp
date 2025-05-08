@@ -61,19 +61,25 @@
 
 	<%
 		String title = request.getParameter("title");
-		String author = request.getParameter("author");
-		String publisher = request.getParameter("publisher");
-		String image = request.getParameter("image");
+		
 	%>
 	<div class="container d-flex">
+		<%
+			for(Map<String, Object> bookInfoMap : list){
+				if(bookInfoMap.get("title").equals(title)) {
+		%>
 		<div class="col-4">
-			<img alt="책 표지" src="<%= image %>" class="w-100">
+			<img alt="책 표지" src="<%= bookInfoMap.get("image") %>" class="w-100">
 		</div>
 		<div>
-			<div class="display-2 font-weight-bolder"><%= title %></div>
-			<div class="text-info display-3"><%= author %></div>
-			<div class="text-secondary display-4"><%= publisher %></div>
+			<div class="display-2 font-weight-bolder"><%= bookInfoMap.get("title") %></div>
+			<div class="text-info display-3"><%= bookInfoMap.get("author") %></div>
+			<div class="text-secondary display-4"><%= bookInfoMap.get("publisher") %></div>
 		</div>
+		<%
+				}
+			}
+		%>
 	</div>
 </body>
 </html>

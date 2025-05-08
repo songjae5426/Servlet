@@ -77,9 +77,7 @@
 					<div class="col-1 text-center"><%= bookInfoMap.get("id") %></div>
 					<div class="col-2 text-center"><img alt="아몬드 책 표지" src="<%= bookInfoMap.get("image") %>" class="w-100"></div>
 					<div class="col-9 text-center">
-						<a href="/jsp/test/test08.jsp?title=<%= bookInfoMap.get("title") %>&author=<%= bookInfoMap.get("author") %>&publisher=<%= bookInfoMap.get("publisher") %>&image=<%= bookInfoMap.get("image") %>" class="display-4">
-							<%= bookInfoMap.get("title") %>
-						</a>
+						<a href="/jsp/test/test08.jsp?title=<%= bookInfoMap.get("title") %>" class="display-4"><%= bookInfoMap.get("title") %></a>
 					</div>
 				</div>
 				<%
