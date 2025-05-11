@@ -60,13 +60,13 @@
 	%>
 
 	<%
-		String title = request.getParameter("title");
+		String id = request.getParameter("id");
 		
 	%>
 	<div class="container d-flex">
 		<%
 			for(Map<String, Object> bookInfoMap : list){
-				if(bookInfoMap.get("title").equals(title)) {
+				if((Integer)bookInfoMap.get("id") == Integer.parseInt(id)) {
 		%>
 		<div class="col-4">
 			<img alt="책 표지" src="<%= bookInfoMap.get("image") %>" class="w-100">

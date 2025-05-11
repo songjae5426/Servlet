@@ -62,7 +62,10 @@
 				</div>
 				<%
 					for(Map<String, Object> storeInfoMap : list){
-						if(search.equals(storeInfoMap.get("menu")) && ((double)storeInfoMap.get("point") > isExceptionCheck(isException))){
+						// Map<String, Object> 이기 때문에 point의 값을 Object로 반환 시킨다 그러므로 명시적으로 Double로 한번 형변환을 해줘야 한다 => Object이기 때문에 기본 타입이 아닌 레퍼 클래스로 타입으로 형변환 해줘야한다 그후 기본타입으로 바꾸던지 
+						// point가 null이면 검색조건만으로 모든 가게 검색
+						// if(search.equals(storeInfoMap.get("menu")) && (storInfoMap.get("point") == null || (Double)storeInfoMap.get("point") > 4.0))
+						if(search.equals(storeInfoMap.get("menu")) && (Double)storeInfoMap.get("point") > isExceptionCheck(isException)){
 							
 				%>
 				<div class="border-top d-flex py-3">

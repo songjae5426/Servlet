@@ -44,7 +44,7 @@ public class Ex03Controller extends HttpServlet{
 		// ["김인규", "유재석", "지예은"]		// 배열
 		// 위에와 같은 규격을 만들어 응답에 담는다
 		// 쌍따움표가 문자로써 출력(활용)되려면 \ 를 앞에 붙인다
-		out.println("{\"name\": \"" + name + "\", \"age\": " + age + "}");
+		out.write("{\"name\": \"" + name + "\", \"age\": " + age + "}");
 		
 		
 //		out.println(""
