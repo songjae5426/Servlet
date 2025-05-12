@@ -93,7 +93,7 @@
 %>
 <div class="container">
 		<header class="d-flex pb-3 col-12">
-			<div class="text-success h1 mr-5">Melong</div>
+			<div class="h1 mr-5"><a href="/jsp/test/test10-input.jsp" class="text-decoration-none text-success">Melong</a></div>
 			<div class="d-flex align-items-center col-5">
 				<form method="get" action="/jsp/test/test10.jsp">
 					<div class="input-group">
@@ -157,7 +157,7 @@
 				</div>
 			</article>
 		</section>
-		<footer>
+		<footer class="col-12">
 			<div class="small border-top py-3">Copyright 2021. 닉네임 All rights reserved.</div>
 		</footer>
 	</div>

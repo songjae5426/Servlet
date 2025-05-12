@@ -93,14 +93,16 @@
 %>
 	<div class="container">
 		<header class="d-flex pb-3 col-12">
-			<div class="text-success h1 mr-5">Melong</div>
+			<div class="h1 mr-5"><a href="/jsp/test/test10-input.jsp" class="text-decoration-none text-success">Melong</a></div>
 			<div class="d-flex align-items-center col-5">
-				<div class="input-group">
-					<input type="text" class="form-control">
-  					<div class="input-group-append">
-    					<button class="btn btn-info" type="button">검색</button>
+				<form method="get" action="/jsp/test/test10.jsp">
+					<div class="input-group">
+						<input type="text" name="search" class="form-control">
+	  					<div class="input-group-append">
+	    					<button class="btn btn-info" type="submit">검색</button>
+						</div>
 					</div>
-				</div>
+				</form>	
 			</div>
 		</header>
 		<nav>
@@ -117,8 +119,13 @@
 				<div class="py-3">
 					<div class="h3">곡 정보</div>
 					<%
-						String search = request.getParameter("search");
-						int id = Integer.parseInt(request.getParameter("id"));
+						// null 처리
+						// id가 0부터 시작된다면 null을 음수로 처리 또는 null을 가주고 그대로 진행하는 방향으로
+						int id = (request.getParameter("id") != null) ? Integer.parseInt(request.getParameter("id")) : 0;
+						String search = (request.getParameter("search") != null) ? request.getParameter("search") : "";
+						
+						
+						if(!search.equals("") || !(id == 0)){
 						for(Map<String, Object> musicInfoMap : musicList){
 							if(id == (Integer)musicInfoMap.get("id") || search.equals(musicInfoMap.get("title"))){
 					%>
@@ -146,8 +153,9 @@
 						</div>
 					</div>
 					<%
+								}
 							}
-						}
+						
 					%>
 				</div>
 			</article>
@@ -157,8 +165,15 @@
 					<div class="border-top border-bottom py-2 pb-5">가사 정보 없음</div>
 				</div>
 			</article>
+			<%
+						}else{
+			%>
+			<div class="text-danger">검색된 곡이 없습니다</div>
+			<%
+						}
+			%>
 		</section>
-		<footer>
+		<footer class="col-12">
 			<div class="small border-top py-3">Copyright 2021. 닉네임 All rights reserved.</div>
 		</footer>
 	</div>
