@@ -95,7 +95,7 @@
 		<header class="d-flex pb-3 col-12">
 			<div class="h1 mr-5"><a href="/jsp/test/test10-input.jsp" class="text-decoration-none text-success">Melong</a></div>
 			<div class="d-flex align-items-center col-5">
-				<form method="get" action="/jsp/test/test10.jsp">
+				<form method="get" action="/jsp/test/test10.jsp" class="w-100">
 					<div class="input-group">
 						<input type="text" name="search" class="form-control">
 	  					<div class="input-group-append">

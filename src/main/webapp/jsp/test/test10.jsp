@@ -95,7 +95,7 @@
 		<header class="d-flex pb-3 col-12">
 			<div class="h1 mr-5"><a href="/jsp/test/test10-input.jsp" class="text-decoration-none text-success">Melong</a></div>
 			<div class="d-flex align-items-center col-5">
-				<form method="get" action="/jsp/test/test10.jsp">
+				<form method="get" action="/jsp/test/test10.jsp" class="w-100">
 					<div class="input-group">
 						<input type="text" name="search" class="form-control">
 	  					<div class="input-group-append">
@@ -121,13 +121,13 @@
 					<%! 
 						// search가 null이거나 제목이 같은 노래가 없으면 false를 리턴하는 메소드
 						public boolean isSearchCheck(List<Map<String, Object>> musicList, String search){
+							if(search.equals("")){
+								return false;
+							}
 							for(Map<String, Object> musicInfoMap : musicList){
 								if(search.equals(musicInfoMap.get("title"))){
 									return true;
 								}
-							}
-							if(search.equals("")){
-								return false;
 							}
 							return false;
 						}
@@ -137,7 +137,6 @@
 						// id가 0부터 시작된다면 null을 음수로 처리 또는 null을 가주고 그대로 진행하는 방향으로
 						int id = (request.getParameter("id") != null) ? Integer.parseInt(request.getParameter("id")) : 0;
 						String search = (request.getParameter("search") != null) ? request.getParameter("search") : "";
-						boolean isSearch = false;
 						
 						if(isSearchCheck(musicList, search) || !(id == 0)){
 						for(Map<String, Object> musicInfoMap : musicList){
