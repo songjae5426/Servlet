@@ -99,7 +99,7 @@
 					<div class="input-group">
 						<input type="text" name="search" class="form-control">
 	  					<div class="input-group-append">
-	    					<button class="btn btn-info" type="submit">검색</button>
+	    					<button class="btn btn-success" type="submit">검색</button>
 						</div>
 					</div>
 				</form>	
@@ -145,7 +145,7 @@
 								</div>
 								<div class="ml-3">
 									<div><%= musicInfoMap.get("album") %></div>
-									<div class="text-dark"><%= (Integer)musicInfoMap.get("time") / 60 %> : <%= (Integer)musicInfoMap.get("time") % 60 %></div>
+									<div><%= (Integer)musicInfoMap.get("time") / 60 %> : <%= (Integer)musicInfoMap.get("time") % 60 %></div>
 									<div><%= musicInfoMap.get("composer") %></div>
 									<div><%= musicInfoMap.get("lyricist") %></div>
 								</div>
