@@ -1,3 +1,5 @@
+<%@page import="java.util.Map"%>
+<%@page import="java.util.List"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.songjae.common.MySqlService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -20,18 +22,18 @@
 			</thead>
 			<tbody>
 				<%
-					MySqlService mySqlService = new MySqlService();
+					MySqlService mySqlService = MySqlService.getInstance();
 					mySqlService.connect();
 					
 					String query = "SELECT `name`, `url` FROM `favorites` ORDER BY `id` DESC;";
 					
-					ResultSet resultSet = mySqlService.select(query);
+					List<Map<String, Object>> list = mySqlService.select(query);
 					
-					while(resultSet.next()) {
+					for(Map<String, Object> map : list){
 				%>
 				<tr>
-					<td><%= resultSet.getString("name") %></td>
-					<td><a href="<%= resultSet.getString("url") %>"><%= resultSet.getString("url") %></a></td>
+					<td><%= map.get("name") %></td>
+					<td><a href="<%= map.get("url") %>"><%= map.get("url") %></a></td>
 				</tr>
 				<%
 					}
