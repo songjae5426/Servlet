@@ -22,6 +22,7 @@ public class Test02InsertController extends HttpServlet{
 		MySqlService mySqlService = MySqlService.getInstance();
 		mySqlService.connect();
 		
+		
 		String query = "INSERT INTO `favorites`\r\n"
 				+ "(`name`, `url`)\r\n"
 				+ "VALUE \r\n"

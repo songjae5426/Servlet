@@ -26,7 +26,6 @@ public class UserCreateController extends HttpServlet{
 		
 		MySqlService mySqlService = MySqlService.getInstance();
 		mySqlService.connect();
-		
 		String query = "INSERT INTO `new_user`\r\n"
 				+ "(`name`, `yyyymmdd`, `email`, `introduce`)\r\n"
 				+ "VALUE\r\n"

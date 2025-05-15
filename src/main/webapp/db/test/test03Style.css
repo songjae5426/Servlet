@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.height{
+	height: 300px;
+}
+.width{
+	width: 250px;
+}
+.hover:hover{
+	background-color: yellow; 
+}
