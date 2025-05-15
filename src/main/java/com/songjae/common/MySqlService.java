@@ -132,6 +132,7 @@ public class MySqlService {
 		try {
 			statement = connection.createStatement();
 			int count = statement.executeUpdate(query);	// count는 실행된 행의 갯수
+			statement.close();
 			return count;
 		} catch (SQLException e) {
 			e.printStackTrace();

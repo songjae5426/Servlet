@@ -25,21 +25,25 @@
 					MySqlService mySqlService = MySqlService.getInstance();
 					mySqlService.connect();
 					
-					String query = "SELECT `name`, `url` FROM `favorites` ORDER BY `id` DESC;";
+					String query = "SELECT * FROM `favorites` ORDER BY `id` DESC;";
 					
 					List<Map<String, Object>> list = mySqlService.select(query);
 					
 					for(Map<String, Object> map : list){
 				%>
+				
 				<tr>
 					<td><%= map.get("name") %></td>
 					<td><a href="<%= map.get("url") %>"><%= map.get("url") %></a></td>
+					<td><a href="/db/test02Delete?id=<%= map.get("id") %>" class="btn btn-success">삭제</a></td>
 				</tr>
 				<%
 					}
+					mySqlService.disconnect();
 				%>
 			</tbody>
 		</table>
+		<a href="/db/test/test02-input.jsp" class="btn btn-success">추가하기</a>
 	</div>
 </body>
 </html>
